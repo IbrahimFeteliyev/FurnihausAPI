@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "641f3d6a-fe77-48fd-8776-5bc09d338591": {
+      "ProjectGuid": "641f3d6a-fe77-48fd-8776-5bc09d338591",
+      "DisplayName": "FurnihausAPI",
+      "ColorIndex": 0
+    },
+    "7b076980-ec68-4456-b388-76bccd7be6c0": {
+      "ProjectGuid": "7b076980-ec68-4456-b388-76bccd7be6c0",
+      "DisplayName": "Business",
+      "ColorIndex": 1
+    },
+    "06410810-eabb-4b99-939f-c3590288c2fe": {
+      "ProjectGuid": "06410810-eabb-4b99-939f-c3590288c2fe",
+      "DisplayName": "Core",
+      "ColorIndex": 2
+    },
+    "e827712b-b2bd-4ff4-ad91-d69160228e66": {
+      "ProjectGuid": "e827712b-b2bd-4ff4-ad91-d69160228e66",
+      "DisplayName": "DataAccess",
+      "ColorIndex": 3
+    },
+    "6d65ff1e-3cdb-4571-a88b-48fac383f259": {
+      "ProjectGuid": "6d65ff1e-3cdb-4571-a88b-48fac383f259",
+      "DisplayName": "Entities",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 5
+}

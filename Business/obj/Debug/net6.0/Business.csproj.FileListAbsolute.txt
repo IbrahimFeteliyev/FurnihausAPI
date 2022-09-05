@@ -1,0 +1,12 @@
+E:\C#\source\repos\FurnihausAPI\Business\bin\Debug\net6.0\Business.deps.json
+E:\C#\source\repos\FurnihausAPI\Business\bin\Debug\net6.0\Business.dll
+E:\C#\source\repos\FurnihausAPI\Business\bin\Debug\net6.0\ref\Business.dll
+E:\C#\source\repos\FurnihausAPI\Business\bin\Debug\net6.0\Business.pdb
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.AssemblyInfo.cs
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.dll
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\ref\Business.dll
+E:\C#\source\repos\FurnihausAPI\Business\obj\Debug\net6.0\Business.pdb
