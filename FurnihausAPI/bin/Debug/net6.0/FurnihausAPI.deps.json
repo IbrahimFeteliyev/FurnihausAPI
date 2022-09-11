@@ -621,6 +621,10 @@
         }
       },
       "Business/1.0.0": {
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "Entities": "1.0.0"
+        },
         "runtime": {
           "Business.dll": {}
         }
@@ -636,6 +640,8 @@
       },
       "DataAccess/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
+          "Entities": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8"
         },
@@ -645,6 +651,7 @@
       },
       "Entities/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8"
         },
         "runtime": {

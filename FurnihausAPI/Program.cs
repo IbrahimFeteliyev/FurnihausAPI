@@ -1,4 +1,10 @@
+using Business.Abstract;
+using Business.Concrete;
+using Core.Security.Hasing;
 using Core.Security.Models;
+using Core.Security.TokenHandler;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -35,6 +41,38 @@ options.SerializerSettings
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<ICategoryDal, CategoryDal>();
+builder.Services.AddScoped<ICategoryManager, CategoryManager>();
+
+builder.Services.AddScoped<IChildCategoryDal, ChildCategoryDal>();
+builder.Services.AddScoped<IChildCategoryManager, ChildCategoryManager>();
+
+builder.Services.AddScoped<ISliderDal, SliderDal>();
+builder.Services.AddScoped<ISliderManager, SliderManager>();
+
+builder.Services.AddScoped<IAuthDal, AuthDal>();
+builder.Services.AddScoped<IAuthManager, AuthManager>();
+
+builder.Services.AddScoped<ICommentDal, CommentDal>();
+builder.Services.AddScoped<ICommentManager, CommentManager>();
+
+builder.Services.AddScoped<IProductPictureDal, ProductPictureDal>();
+builder.Services.AddScoped<IProductPictureManager, ProductPictureManager>();
+
+builder.Services.AddScoped<IProductDal, ProductDal>();
+builder.Services.AddScoped<IProductManager, ProductManager>();
+
+builder.Services.AddScoped<IOrderDal, OrderDal>();
+builder.Services.AddScoped<IOrderManager, OrderManager>();
+
+builder.Services.AddScoped<IOrderTrackingDal, OrderTrackingDal>();
+builder.Services.AddScoped<IOrderTrackingManager, OrderTrackingManager>();
+
+
+builder.Services.AddScoped<HasingHandler>();
+builder.Services.AddScoped<TokenGenerator>();
+builder.Services.AddScoped<JWTConfig>();
 
 builder.Services.AddCors(options =>
 {

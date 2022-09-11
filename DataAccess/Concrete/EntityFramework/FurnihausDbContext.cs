@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Entity.Models;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,14 @@ namespace DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ParentCategory> ParentCategories { get; set; }
-
-
+        public DbSet<ChildCategory> ChildCategories { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderTracking> OrderTrackings { get; set; }
+        public DbSet<ProductPicture> ProductPictures { get; set; }
 
     }
 }

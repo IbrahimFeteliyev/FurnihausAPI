@@ -28,6 +28,11 @@ namespace Business.Concrete
             return _categoryDal.GetAll();
         }
 
+        public List<Category> GetAllChildCategories()
+        {
+            return _categoryDal.GetAllCat();
+        }
+
         public Category GetCategoryById(int id)
         {
             return _categoryDal.Get(x => x.Id == id);

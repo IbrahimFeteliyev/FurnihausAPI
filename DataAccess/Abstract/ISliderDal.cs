@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IParentCategoryDal : IEntityRepository<ParentCategory>
+    public interface ISliderDal : IEntityRepository<Slider>
     {
-        List<ParentCategory> GetParentCategories(int categoryId);
     }
 }

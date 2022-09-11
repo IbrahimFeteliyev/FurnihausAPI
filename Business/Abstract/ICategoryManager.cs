@@ -14,5 +14,6 @@ namespace Business.Abstract
         void Update(Category category);
         List<Category> GetAllCategories();
         Category GetCategoryById(int id);
+        List<Category> GetAllChildCategories();
     }
 }
