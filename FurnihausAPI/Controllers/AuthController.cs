@@ -67,20 +67,20 @@ namespace FurnihausAPI.Controllers
 
         }
 
-        //[Authorize]
-        //[HttpGet("getbyemail")]
-        //public async Task<IActionResult> GetByEmail()
-        //{
-        //    var _bearer_token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
-        //    var handler = new JwtSecurityTokenHandler();
-        //    var jwtSecurityTeam = handler.ReadJwtToken(_bearer_token);
-        //    var email = jwtSecurityTeam.Claims.FirstOrDefault(x => x.Type == "email").Value;
+        [Authorize]
+        [HttpGet("getbyemail")]
+        public async Task<IActionResult> GetByEmail()
+        {
+            var _bearer_token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+            var handler = new JwtSecurityTokenHandler();
+            var jwtSecurityTeam = handler.ReadJwtToken(_bearer_token);
+            var email = jwtSecurityTeam.Claims.FirstOrDefault(x => x.Type == "email").Value;
 
 
-        //    var user = _authManager.GetUserByEmail(email);
-        //    var result = new UserDTO(user.Id, user.FullName, user.Email);
-        //    return Ok(result);
-        //}
+            var user = _authManager.GetUserByEmail(email);
+            var result = new UserDTO(user.Id, user.FullName, user.Email);
+            return Ok(result);
+        }
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         //[Authorize(Roles = "Admin")]
