@@ -19,7 +19,6 @@ namespace Core.Security.Hasing
             {
                 sp.Append(bytes[i].ToString("x2"));
             }
-
             return sp.ToString();
         }
     }
