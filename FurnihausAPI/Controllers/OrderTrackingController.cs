@@ -38,12 +38,13 @@ namespace FurnihausAPI.Controllers
             return Ok(new { status = 200, message = "Silindi" });
         }
 
-        [HttpGet("getbyid/{id}")]
-        public IActionResult GetByIdOrderTracking(int id)
+        [HttpGet("getallordertracking")]
+        public async Task<IActionResult> GetAll()
         {
-            var orderTracking = _orderTrackingManager.GetOrderTrackingById(id);
-            return Ok(new { status = 200, message = orderTracking });
+            var order = _orderTrackingManager.GetAll();
+            return Ok(new { status = 200, message = order });
         }
+
 
     }
 }

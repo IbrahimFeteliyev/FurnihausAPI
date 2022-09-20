@@ -13,34 +13,40 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class OrderDal : EfEntityRepositoryBase<Order, FurnihausDbContext>, IOrderDal
     {
-
-        public List<Order> GetOrder(int userId)
+        public List<OrderDTO> GetAllOrders()
         {
-            using FurnihausDbContext context = new();
+            using var context = new FurnihausDbContext();
 
-            var order = context.Orders.Include(x => x.Product).Include(x => x.OrderTracking).Where(x => x.UserId == userId).ToList();
-            List<Order> orderList = new();
-            for (int i = 0; i < order.Count; i++)
+            var orders = context.Orders.Include(x => x.Product).Include(x => x.User).Include(x => x.OrderTracking).ToList();
+
+            List<OrderDTO> result = new();
+
+            foreach (var order in orders)
             {
-                Order orderuser = new()
+                OrderDTO orderDTO = new()
                 {
-                    Id = order[i].Id,
-                    ProductId = order[i].ProductId,
-                    User = order[i].User,
-                    UserId = order[i].UserId,
-                    TotalPrice = order[i].TotalPrice,
-                    TotalQuantity = order[i].TotalQuantity,
-                    OrderTrackingId = order[i].OrderTrackingId
+                    Id = order.Id,
+                    IsDelivered = order.IsDelivered,
+                    UserId = order.UserId,
+                    UserEmail = order.User.Email,
+                    OrderTrackingId = order.OrderTrackingId,
+                    ProductId = order.ProductId,
+                    ProductName = order.Product.Name,
+                    SKU = order.Product.SKU,
+                    Status = order.OrderTracking.Name,
+                    TotalPrice = order.TotalPrice,
+                    TotalQuantity = order.TotalQuantity
                 };
-                orderList.Add(orderuser);
+                result.Add(orderDTO);
             }
-            return orderList;
-        }
 
+            return result;
+
+        }
         public List<OrderDTO> GetUserOrders(int userId)
         {
             using var context = new FurnihausDbContext();
-            var orderList = context.Orders.Include(X => X.Product).Include(x => x.OrderTracking).Where(x => x.UserId == userId).ToList();
+            var orderList = context.Orders.Include(X => X.Product).Include(x => x.User).Include(x => x.OrderTracking).Where(x => x.UserId == userId).ToList();
 
             List<OrderDTO> list = new();
 
@@ -50,9 +56,11 @@ namespace DataAccess.Concrete.EntityFramework
                 {
                     UserId = userId,
                     Id = order.Id,
+                    ProductId = order.ProductId,
                     IsDelivered = order.IsDelivered,
                     ProductName = order.Product.Name,
                     SKU = order.Product.SKU,
+                    UserEmail = order.User.Email,
                     Status = order.OrderTracking.Name,
                     TotalPrice = order.TotalPrice,
                     TotalQuantity = order.TotalQuantity,
@@ -60,9 +68,9 @@ namespace DataAccess.Concrete.EntityFramework
                 };
                 list.Add(orderDTO);
             }
-
             return list;
 
         }
     }
+
 }

@@ -38,7 +38,7 @@ namespace FurnihausAPI.Controllers
         [HttpPut("update")]
         public IActionResult UpdateCategory(Category category)
         {
-            _categoryManager.Update(category);
+            _categoryManager.Update(category);  
             return Ok(new { status = 200, message = category });
         }
 

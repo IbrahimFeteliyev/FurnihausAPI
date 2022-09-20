@@ -15,10 +15,13 @@ namespace Business.Concrete
     {
         private readonly IAuthDal _authDal;
         private readonly HasingHandler _hasingHandler;
-        public AuthManager(IAuthDal authDal, HasingHandler hasingHandler)
+        private readonly IUserRoleManager _userRoleManager;
+
+        public AuthManager(IAuthDal authDal, HasingHandler hasingHandler, IUserRoleManager userRoleManager)
         {
             _authDal = authDal;
             _hasingHandler = hasingHandler;
+            _userRoleManager = userRoleManager;
         }
 
         public User Login(string email)
@@ -47,6 +50,7 @@ namespace Business.Concrete
             };
             _authDal.Add(user);
             var currentUser = _authDal.Get(x => x.Email == user.Email);
+            _userRoleManager.AddDefaultRole(currentUser.Id);
         }
 
         public User GetUserByEmail(string email)

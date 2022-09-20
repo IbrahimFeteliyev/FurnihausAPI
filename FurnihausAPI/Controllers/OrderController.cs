@@ -41,51 +41,30 @@ namespace FurnihausAPI.Controllers
             }
         }
 
-        [HttpPut("update")]
-        public IActionResult UpdateOrder(OrderDTO model)
-        {
-            try
-            {
-                Order order = new()
-                {
-                    UserId = model.UserId,
-                    IsDelivered = model.IsDelivered,
-                    ProductId = model.ProductId,
-                    OrderTrackingId = model.OrderTrackingId,
-                    TotalPrice = model.TotalPrice,
-                    TotalQuantity = model.TotalQuantity
-                };
-                _orderManager.Update(order);
-                return Ok(new { status = 200, message = "Update olundu!" });
-            }
-            catch (Exception)
-            {
-
-                return Ok(new { status = 404, message = "Hele de islemirrr." });
-            }
-
-        }
-
-        [HttpGet("getbyid/{id}")]
-        public IActionResult GetById(int id)
-        {
-            var order = _orderManager.GetOrderById(id);
-            return Ok(new { status = 200, message = order });
-        }
-
-        [HttpDelete("remove")]
-        public IActionResult RemoveOrder(Order model)
-        {
-            _orderManager.Remove(model);
-            return Ok(new { status = 200, message = "Silindi" });
-        }
-
         [HttpGet("getall/{userId}")]
         public async Task<IActionResult> UserOrder(int userId)
         {
             var order = _orderManager.GetAll(userId);
             return Ok(new { status = 200, message = order });
-
         }
+
+        [HttpGet("allorders")]
+        public async Task<IActionResult> GetAllOrders()
+        {
+            var order = _orderManager.GetAllOrders();
+            return Ok(new { status = 200, message = order });
+        }
+
+        [HttpPut("updatetracking/{orderId}/{trackId}")]
+        public async Task<IActionResult> UpdateTracking(int orderId, int trackId)
+        {
+
+            var data = _orderManager.GetOrderById(orderId);
+            data.OrderTrackingId = trackId;
+            _orderManager.Update(data);
+
+            return Ok(new { status = 200, message = "Yenilendi." });
+        }
+
     }
 }

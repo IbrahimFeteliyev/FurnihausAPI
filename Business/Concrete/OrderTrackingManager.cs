@@ -22,12 +22,7 @@ namespace Business.Concrete
         {
             _orderTrackingDal.Add(orderTracking);
         }
-
-        public OrderTracking GetOrderTrackingById(int id)
-        {
-            return _orderTrackingDal.Get(x => x.Id == id);
-        }
-
+        
         public void Remove(OrderTracking orderTracking)
         {
             _orderTrackingDal.Delete(orderTracking);
@@ -36,6 +31,11 @@ namespace Business.Concrete
         public void Update(OrderTracking orderTracking)
         {
             _orderTrackingDal.Update(orderTracking);
+        }
+
+        public List<OrderTracking> GetAll()
+        {
+            return _orderTrackingDal.GetAll();
         }
     }
 }

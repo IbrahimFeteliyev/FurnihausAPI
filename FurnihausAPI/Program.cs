@@ -69,6 +69,11 @@ builder.Services.AddScoped<IOrderManager, OrderManager>();
 builder.Services.AddScoped<IOrderTrackingDal, OrderTrackingDal>();
 builder.Services.AddScoped<IOrderTrackingManager, OrderTrackingManager>();
 
+builder.Services.AddScoped<IUserRoleDal, UserRoleDal>();
+builder.Services.AddScoped<IUserRoleManager, UserRoleManager>();
+
+builder.Services.AddScoped<IRoleDal, RoleDal>();
+builder.Services.AddScoped<IRoleManager, RoleManager>();
 
 builder.Services.AddScoped<HasingHandler>();
 builder.Services.AddScoped<TokenGenerator>();
@@ -94,10 +99,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 app.UseCors(MyAllowSpecificOrigins);
-
 
 
 app.UseAuthentication();

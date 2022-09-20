@@ -12,6 +12,6 @@ namespace Business.Abstract
         void Add(OrderTracking orderTracking);
         void Remove(OrderTracking orderTracking);
         void Update(OrderTracking orderTracking);
-        OrderTracking GetOrderTrackingById(int id);
+        List<OrderTracking> GetAll();
     }
 }

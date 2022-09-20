@@ -29,9 +29,14 @@ namespace Business.Concrete
             return _orderDal.GetUserOrders(userId);
         }
 
-        public List<Order> GetOrderById(int userId)
+        public List<OrderDTO> GetAllOrders()
         {
-            return _orderDal.GetOrder(userId);
+            return _orderDal.GetAllOrders();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return _orderDal.Get(x => x.Id == id);
         }
 
         public void Remove(Order order)

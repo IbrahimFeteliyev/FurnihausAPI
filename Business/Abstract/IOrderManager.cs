@@ -13,7 +13,8 @@ namespace Business.Abstract
         void Add(Order order);
         void Remove(Order order);
         void Update(Order order);
-        List<Order> GetOrderById(int userId);
         List<OrderDTO> GetAll(int userId);
+        Order GetOrderById(int id);
+        List<OrderDTO> GetAllOrders();
     }
 }
