@@ -17,9 +17,10 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (FurnihausDbContext context = new())
             {
-                var product = context.Products.Include(x => x.ChildCategory).FirstOrDefault(x => x.Id == id);
+                var product = context.Products.Include(x => x.Category).FirstOrDefault(x => x.Id == id);
                 var productPictures = context.ProductPictures.Where(x => x.ProductId == id).ToList();
                 var comments = context.Comments.Where(x => x.ProductId == product.Id).ToList();
+
 
                 decimal ratingSum = 0;
                 int ratingCount = 0;
@@ -61,17 +62,20 @@ namespace DataAccess.Concrete.EntityFramework
                 {
                     Id = product.Id,
                     Name = product.Name,
+                    Brand = product.Brand,
                     Description = product.Description,
-                    ChildCategoryName = product.ChildCategory.ChildCategoryName,
+                    CategoryName = product.Category.Name,
                     Price = product.Price,
+                    SalePrice = product.SalePrice,
+                    SKU = product.SKU,
                     ReviewCount = ratingCount,
+                    Summary = product.Summary,
                     ProductPictures = pictures,
                     CoverPhoto = product.CoverPhoto,
-                    IsSlider = product.IsSlider,
-                    SKU = product.SKU,
                     IsStock = product.IsStock,
+                    IsSale = product.IsSale,
                     Rating = Math.Round(ratingSum, 1),
-                    Comments = commentResult,
+                    Comments = commentResult
                 };
 
                 return result;
@@ -82,12 +86,16 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (FurnihausDbContext context = new())
             {
-                var products = context.Products.Include(x => x.ChildCategory).Include(x => x.ProductPicture).ToList();
+                var products = context.Products.Include(x => x.Category).Include(x => x.ProductPicture).ToList();
                 var productPictures = context.ProductPictures;
 
                 var ratings = context.Comments;
 
+
+
                 List<ProductDTO> result = new();
+
+
 
                 for (int i = 0; i < products.Count; i++)
                 {
@@ -116,19 +124,24 @@ namespace DataAccess.Concrete.EntityFramework
                         ratingSum = ratingSum / ratingCount;
                     }
 
+
+
                     ProductDTO productList = new()
                     {
                         Id = products[i].Id,
                         Name = products[i].Name,
+                        Brand = products[i].Brand,
                         Description = products[i].Description,
-                        ChildCategoryName = products[i].ChildCategory.ChildCategoryName,
+                        CategoryName = products[i].Category.Name,
                         Price = products[i].Price,
+                        SalePrice = products[i].SalePrice,
+                        SKU = products[i].SKU,
+                        Summary = products[i].Summary,
                         ProductPictures = pictures,
                         CoverPhoto = products[i].CoverPhoto,
-                        IsSlider = products[i].IsSlider,
-                        SKU = products[i].SKU,
                         IsStock = products[i].IsStock,
-                        Rating = Math.Round(ratingSum, 1),
+                        IsSale = products[i].IsSale,
+                        Rating = Math.Round(ratingSum, 1)
                     };
                     result.Add(productList);
                 }

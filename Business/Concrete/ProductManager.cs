@@ -21,16 +21,20 @@ namespace Business.Concrete
             _productPictureManager = productPictureManager;
         }
 
+
         public void AddProduct(AddProductDTO productDTO)
         {
             Product product = new()
             {
                 Name = productDTO.Name,
+                Brand = productDTO.Brand,
                 Description = productDTO.Description,
-                ChildCategoryId = productDTO.ChildCategoryId,
+                CategoryId = productDTO.CategoryId,
                 Price = productDTO.Price,
-                CoverPhoto = productDTO.CoverPhoto,
+                SalePrice = productDTO.SalePrice,
                 SKU = productDTO.SKU,
+                Summary = productDTO.Summary,
+                CoverPhoto = productDTO.CoverPhoto
             };
 
             _productDal.Add(product);
@@ -57,14 +61,36 @@ namespace Business.Concrete
             return _productDal.FindById(id);
         }
 
-        public void Remove(Product product)
+        public void RemoveProduct(AddProductDTO product, int id)
         {
-            _productDal.Delete(product);
+            var current = _productDal.Get(x => x.Id == id);
+            current.Name = product.Name;
+            current.Description = product.Description;
+            current.Price = product.Price;
+            current.CoverPhoto = product.CoverPhoto;
+            current.IsStock = product.IsStock;
+            current.IsSale = product.IsSale;
+            current.Brand = product.Brand;
+            current.SalePrice = product.SalePrice;
+            current.SKU = product.SKU;
+            current.Summary = product.Summary;
+            _productDal.Delete(current);
         }
 
-        public void Update(Product product)
+        public void UpdateProduct(AddProductDTO product, int id)
         {
-            _productDal.Update(product);
+            var current = _productDal.Get(x => x.Id == id);
+            current.Name = product.Name;
+            current.Description = product.Description;
+            current.Price = product.Price;
+            current.CoverPhoto = product.CoverPhoto;
+            current.IsStock = product.IsStock;
+            current.IsSale = product.IsSale;
+            current.Brand = product.Brand;
+            current.SalePrice = product.SalePrice;
+            current.SKU = product.SKU;
+            current.Summary = product.Summary;
+            _productDal.Update(current);
         }
     }
 }

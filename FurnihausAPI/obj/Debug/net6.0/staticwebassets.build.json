@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "pcz2Oz9o0WBZv6v/Hp5X9RRWCId1E0J+AEzcXqxtSH8=",
+  "Hash": "swnAo0bS2hqBnMFI4UHwW/a/4pJpNme9wdndrGev/nk=",
   "Source": "FurnihausAPI",
   "BasePath": "_content/FurnihausAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FurnihausAPI\\wwwroot",
+      "Source": "FurnihausAPI",
+      "ContentRoot": "E:\\C#\\source\\repos\\FurnihausAPI\\FurnihausAPI\\wwwroot\\",
+      "BasePath": "_content/FurnihausAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [
     {
       "Identity": "C:\\Users\\MeGaComputers\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.8\\staticwebassets\\V5\\css\\site.css",

@@ -11,26 +11,25 @@ namespace FurnihausAPI.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductManager _productManager;
+        private readonly IWebHostEnvironment _environment;
 
-        public ProductController(IProductManager productManager)
+        public ProductController(IProductManager productManager, IWebHostEnvironment environment)
         {
             _productManager = productManager;
-        }
-
-        [HttpGet("getall")]
-        public IActionResult GetAllProduct()
-        {
-            var products = _productManager.GetAllProducts();
-            if (products.Count == 0)
-                return Ok(new { status = 200, message = "Hec bir mehsul tapilmadi" });
-
-            return Ok(new { status = 200, message = products });
+            _environment = environment;
         }
 
         [HttpGet("productList")]
         public IActionResult ProductList()
         {
             var productList = _productManager.GetAllProductList();
+            return Ok(new { status = 200, message = productList });
+        }
+
+        [HttpGet("getallproducts")]
+        public IActionResult GetAllProducts()
+        {
+            var productList = _productManager.GetAllProducts();
             return Ok(new { status = 200, message = productList });
         }
 
@@ -41,7 +40,6 @@ namespace FurnihausAPI.Controllers
 
             return Ok(new { status = 200, message = product });
         }
-
 
         [HttpPost("add")]
         public IActionResult AddProduct(AddProductDTO product)
@@ -58,20 +56,46 @@ namespace FurnihausAPI.Controllers
             return Ok(new { status = 200, message = "Mehsul elave olundu." });
         }
 
-        [HttpPut("update")]
-        public IActionResult UpdateProduct(Product product)
+        [HttpPost("uploadcover")]
+        public async Task<IActionResult> UploadPhotoAsync(IFormFile Image)
         {
-            _productManager.Update(product);
-            return Ok(new { status = 200, message = product });
-        }
-
-        [HttpDelete("remove")]
-        public IActionResult DeleteProduct(Product product)
-        {
-            _productManager.Remove(product);
-            return Ok("Mehsul ugurla silindi.");
+            string path = "/files/" + Guid.NewGuid() + Image.FileName;
+            using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+            {
+                await Image.CopyToAsync(fileStream);
+            }
+            return Ok(new { status = 200, message = path });
         }
 
 
+        [HttpPost("uploadimages")]
+        public async Task<IActionResult> UploadImagesAsync(IFormFile Image)
+        {
+            string path = "/files/" + Guid.NewGuid() + Image.FileName;
+            using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+            {
+                await Image.CopyToAsync(fileStream);
+            }
+
+            List<string> photos = new();
+
+            return Ok(new { status = 200, message = path });
+        }
+
+        [HttpPut("updateproduct/{id}")]
+        public async Task<IActionResult> UpdateProduct(AddProductDTO model, int id)
+        {
+
+            _productManager.UpdateProduct(model, id);
+            return Ok(new { status = 200, message = "Mehsul yenilendi" });
+        }
+
+        [HttpDelete("removeproduct/{id}")]
+        public async Task<IActionResult> RemoveProduct(AddProductDTO model, int id)
+        {
+
+            _productManager.RemoveProduct(model, id);
+            return Ok(new { status = 200, message = "Mehsul silindi" });
+        }
     }
 }

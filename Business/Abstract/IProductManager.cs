@@ -10,9 +10,10 @@ namespace Business.Abstract
 {
     public interface IProductManager
     {
+
         void AddProduct(AddProductDTO product);
-        void Remove(Product product);
-        void Update(Product product);
+        void UpdateProduct(AddProductDTO product, int id);
+        void RemoveProduct(AddProductDTO product, int id);
         List<Product> GetAllProducts();
         List<ProductDTO> GetAllProductList();
         ProductDTO GetProductById(int id);
