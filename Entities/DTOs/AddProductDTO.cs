@@ -19,6 +19,6 @@ namespace Entities.DTOs
         public string SKU { get; set; }
         public string CoverPhoto { get; set; }
         public int CategoryId { get; set; }
-        public List<ProductPictureDTO> ProductPicture { get; set; }
+        public List<ProductPictureDTO> ProductPictures { get; set; }
     }
 }

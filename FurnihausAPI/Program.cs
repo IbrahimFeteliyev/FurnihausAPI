@@ -75,6 +75,9 @@ builder.Services.AddScoped<IUserRoleManager, UserRoleManager>();
 builder.Services.AddScoped<IRoleDal, RoleDal>();
 builder.Services.AddScoped<IRoleManager, RoleManager>();
 
+builder.Services.AddScoped<IBlogDal, BlogDal>();
+builder.Services.AddScoped<IBlogManager, BlogManager>();
+
 builder.Services.AddScoped<HasingHandler>();
 builder.Services.AddScoped<TokenGenerator>();
 builder.Services.AddScoped<JWTConfig>();

@@ -39,10 +39,10 @@ namespace Business.Concrete
 
             _productDal.Add(product);
 
-            for (int i = 0; i < productDTO.ProductPicture.Count; i++)
+            for (int i = 0; i < productDTO.ProductPictures.Count; i++)
             {
-                productDTO.ProductPicture[i].ProductId = product.Id;
-                _productPictureManager.AddProductPicture(productDTO.ProductPicture[i]);
+                productDTO.ProductPictures[i].ProductId = product.Id;
+                _productPictureManager.AddProductPicture(productDTO.ProductPictures[i]);
             }
         }
 
