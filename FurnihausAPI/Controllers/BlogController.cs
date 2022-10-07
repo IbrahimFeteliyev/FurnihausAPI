@@ -44,5 +44,10 @@ namespace FurnihausAPI.Controllers
             _blogManager.RemoveBlog(blog, id);
             return Ok("Blog deleted.");
         }
+        [HttpGet("getblogbyid")]
+        public object GetBlogById(int id)
+        {
+            return _blogManager.GetBlogById(id);
+        }
     }
 }
