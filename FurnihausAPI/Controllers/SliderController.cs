@@ -29,17 +29,17 @@ namespace FurnihausAPI.Controllers
             return Ok("Slider added.");
         }
 
-        [HttpPut("update")]
-        public IActionResult UpdateCategory(Slider slider)
+        [HttpPut("update/{id}")]
+        public IActionResult UpdateCategory(Slider slider, int id)
         {
-            _sliderManager.Update(slider);
+            _sliderManager.Update(slider, id);
             return Ok(new { status = 200, message = slider });
         }
 
-        [HttpDelete("remove")]
-        public IActionResult DeleteCategory(Slider slider)
+        [HttpDelete("remove/{id}")]
+        public IActionResult DeleteCategory(Slider slider, int id)
         {
-            _sliderManager.Remove(slider);
+            _sliderManager.Remove(slider, id);
             return Ok("Slider deleted.");
         }
     }

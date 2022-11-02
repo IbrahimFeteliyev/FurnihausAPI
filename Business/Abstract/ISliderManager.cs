@@ -10,8 +10,8 @@ namespace Business.Abstract
     public interface ISliderManager
     {
         void Add(Slider slider);
-        void Remove(Slider slider);
-        void Update(Slider slider);
+        void Remove(Slider slider, int id);
+        void Update(Slider slider, int id);
         List<Slider> GetAllSliders();
     }
 }

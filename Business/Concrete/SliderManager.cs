@@ -28,14 +28,16 @@ namespace Business.Concrete
             return _sliderDal.GetAll();
         }
 
-        public void Remove(Slider slider)
+        public void Remove(Slider slider, int id)
         {
-            _sliderDal.Delete(slider);
+            var current = _sliderDal.Get(x => x.Id == id);
+            _sliderDal.Delete(current);
         }
 
-        public void Update(Slider slider)
+        public void Update(Slider slider, int id)
         {
-            _sliderDal.Update(slider);
+            var current = _sliderDal.Get(x => x.Id == id);
+            _sliderDal.Update(current);
         }
     }
 }
