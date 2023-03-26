@@ -1,6 +1,5 @@
 E:\C#\source\repos\FurnihausAPI\Entities\bin\Debug\net6.0\Entities.deps.json
 E:\C#\source\repos\FurnihausAPI\Entities\bin\Debug\net6.0\Entities.dll
-E:\C#\source\repos\FurnihausAPI\Entities\bin\Debug\net6.0\ref\Entities.dll
 E:\C#\source\repos\FurnihausAPI\Entities\bin\Debug\net6.0\Entities.pdb
 E:\C#\source\repos\FurnihausAPI\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
 E:\C#\source\repos\FurnihausAPI\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
@@ -13,3 +12,4 @@ E:\C#\source\repos\FurnihausAPI\Entities\obj\Debug\net6.0\Entities.pdb
 E:\C#\source\repos\FurnihausAPI\Entities\bin\Debug\net6.0\Core.dll
 E:\C#\source\repos\FurnihausAPI\Entities\bin\Debug\net6.0\Core.pdb
 E:\C#\source\repos\FurnihausAPI\Entities\obj\Debug\net6.0\Entities.csproj.CopyComplete
+E:\C#\source\repos\FurnihausAPI\Entities\obj\Debug\net6.0\refint\Entities.dll

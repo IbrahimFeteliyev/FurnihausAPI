@@ -30,14 +30,14 @@ namespace FurnihausAPI.Controllers
         }
 
         [HttpPut("update/{id}")]
-        public IActionResult UpdateCategory(Slider slider, int id)
+        public async Task<IActionResult> UpdateSlider(Slider slider, int id)
         {
             _sliderManager.Update(slider, id);
             return Ok(new { status = 200, message = slider });
         }
 
         [HttpDelete("remove/{id}")]
-        public IActionResult DeleteCategory(Slider slider, int id)
+        public async Task<IActionResult> DeleteSlider(Slider slider, int id)
         {
             _sliderManager.Remove(slider, id);
             return Ok("Slider deleted.");

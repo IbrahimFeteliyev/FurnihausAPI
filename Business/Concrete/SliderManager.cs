@@ -37,6 +37,9 @@ namespace Business.Concrete
         public void Update(Slider slider, int id)
         {
             var current = _sliderDal.Get(x => x.Id == id);
+            current.Title = slider.Title;
+            current.PhotoUrl = slider.PhotoUrl;
+            current.Description = slider.Description;
             _sliderDal.Update(current);
         }
     }

@@ -4,7 +4,6 @@ E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\FurnihausAPI.exe
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\FurnihausAPI.deps.json
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\FurnihausAPI.runtimeconfig.json
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\FurnihausAPI.dll
-E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\ref\FurnihausAPI.dll
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\FurnihausAPI.pdb
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -80,3 +79,9 @@ E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\Entities.dll
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\Business.pdb
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\DataAccess.pdb
 E:\C#\source\repos\FurnihausAPI\FurnihausAPI\bin\Debug\net6.0\Entities.pdb
+E:\C#\source\repos\FurnihausAPI\FurnihausAPI\obj\Debug\net6.0\refint\FurnihausAPI.dll
+E:\C#\source\repos\FurnihausAPI\FurnihausAPI\obj\Debug\net6.0\staticwebassets\msbuild.FurnihausAPI.Microsoft.AspNetCore.StaticWebAssets.props
+E:\C#\source\repos\FurnihausAPI\FurnihausAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.FurnihausAPI.props
+E:\C#\source\repos\FurnihausAPI\FurnihausAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.FurnihausAPI.props
+E:\C#\source\repos\FurnihausAPI\FurnihausAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.FurnihausAPI.props
+E:\C#\source\repos\FurnihausAPI\FurnihausAPI\obj\Debug\net6.0\staticwebassets.pack.json

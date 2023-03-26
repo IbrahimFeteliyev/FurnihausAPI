@@ -81,7 +81,7 @@ namespace FurnihausAPI.Controllers
 
             var user = _authManager.GetUserByEmail(email);
             var result = new UserDTO(user.Id, user.FullName, user.Email);
-            return Ok(result);
+            return Ok(result);  
         }
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]

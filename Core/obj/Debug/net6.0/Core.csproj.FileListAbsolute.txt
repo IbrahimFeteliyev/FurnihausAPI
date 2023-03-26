@@ -1,6 +1,5 @@
 E:\C#\source\repos\FurnihausAPI\Core\bin\Debug\net6.0\Core.deps.json
 E:\C#\source\repos\FurnihausAPI\Core\bin\Debug\net6.0\Core.dll
-E:\C#\source\repos\FurnihausAPI\Core\bin\Debug\net6.0\ref\Core.dll
 E:\C#\source\repos\FurnihausAPI\Core\bin\Debug\net6.0\Core.pdb
 E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\Core.csproj.AssemblyReference.cache
 E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\Core.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,3 +9,4 @@ E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\Core.csproj.CoreCompileInp
 E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\Core.dll
 E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\ref\Core.dll
 E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\Core.pdb
+E:\C#\source\repos\FurnihausAPI\Core\obj\Debug\net6.0\refint\Core.dll
