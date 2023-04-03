@@ -145,28 +145,6 @@ namespace DataAccess.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.ChildCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ChildCategoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("ChildCategories");
-                });
-
             modelBuilder.Entity("Entities.Concrete.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -374,15 +352,6 @@ namespace DataAccess.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.ChildCategory", b =>
-                {
-                    b.HasOne("Entities.Concrete.Category", null)
-                        .WithMany("ChildCategory")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Entities.Concrete.Comment", b =>
                 {
                     b.HasOne("Entities.Concrete.Product", "Product")
@@ -441,11 +410,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Entities.Concrete.Category", b =>
-                {
-                    b.Navigation("ChildCategory");
                 });
 
             modelBuilder.Entity("Entities.Concrete.Product", b =>

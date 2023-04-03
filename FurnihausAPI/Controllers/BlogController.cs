@@ -31,14 +31,14 @@ namespace FurnihausAPI.Controllers
             return Ok("Blog added.");
         }
 
-        [HttpPut("update")]
+        [HttpPut("update/{id}")]
         public IActionResult UpdateBlog(Blog blog,int id)
         {
             _blogManager.UpdateBlog(blog, id);
             return Ok(new { status = 200, message = blog });
         }
 
-        [HttpDelete("remove")]
+        [HttpDelete("remove/{id}")]
         public IActionResult DeleteBlog(Blog blog, int id)
         {
             _blogManager.RemoveBlog(blog, id);

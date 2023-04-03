@@ -64,16 +64,6 @@ namespace Business.Concrete
         public void RemoveProduct(AddProductDTO product, int id)
         {
             var current = _productDal.Get(x => x.Id == id);
-            current.Name = product.Name;
-            current.Description = product.Description;
-            current.Price = product.Price;
-            current.CoverPhoto = product.CoverPhoto;
-            current.IsStock = product.IsStock;
-            current.IsSale = product.IsSale;
-            current.Brand = product.Brand;
-            current.SalePrice = product.SalePrice;
-            current.SKU = product.SKU;
-            current.Summary = product.Summary;
             _productDal.Delete(current);
         }
 

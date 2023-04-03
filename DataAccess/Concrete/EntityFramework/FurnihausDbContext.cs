@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ChildCategory> ChildCategories { get; set; }
+        //public DbSet<ChildCategory> ChildCategories { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }

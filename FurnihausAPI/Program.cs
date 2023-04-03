@@ -45,8 +45,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICategoryDal, CategoryDal>();
 builder.Services.AddScoped<ICategoryManager, CategoryManager>();
 
-builder.Services.AddScoped<IChildCategoryDal, ChildCategoryDal>();
-builder.Services.AddScoped<IChildCategoryManager, ChildCategoryManager>();
+//builder.Services.AddScoped<IChildCategoryDal, ChildCategoryDal>();
+//builder.Services.AddScoped<IChildCategoryManager, ChildCategoryManager>();
 
 builder.Services.AddScoped<ISliderDal, SliderDal>();
 builder.Services.AddScoped<ISliderManager, SliderManager>();

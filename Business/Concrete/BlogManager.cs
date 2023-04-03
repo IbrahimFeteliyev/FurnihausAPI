@@ -41,11 +41,6 @@ namespace Business.Concrete
         public void RemoveBlog(Blog blog, int id)
         {
             var current = _blogDal.Get(x => x.Id == id);
-            current.CoverPhoto = blog.CoverPhoto;
-            current.Description = blog.Description;
-            current.Image = blog.Image;
-            current.Title = blog.Title;
-            current.PublishDate = blog.PublishDate;
             _blogDal.Delete(current);
         }
 

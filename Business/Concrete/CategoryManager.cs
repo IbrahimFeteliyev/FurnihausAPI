@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
+using DataAccess.Migrations;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace Business.Concrete
             return _categoryDal.GetAll();
         }
 
-        public List<Category> GetAllChildCategories()
+        public List<Category> GetAllFeaturedCategories()
         {
             return _categoryDal.GetAllCat();
         }
@@ -38,14 +39,20 @@ namespace Business.Concrete
             return _categoryDal.Get(x => x.Id == id);
         }
 
-        public void Remove(Category category)
+        public void Remove(Category category, int id)
         {
-            _categoryDal.Delete(category);
+            var current = _categoryDal.Get(x => x.Id == id);
+            current.Name = category.Name;
+            current.PhotoUrl = category.PhotoUrl;
+            _categoryDal.Delete(current);
         }
 
-        public void Update(Category category)
+        public void Update(Category category, int id)
         {
-            _categoryDal.Update(category);
+            var current = _categoryDal.Get(x => x.Id == id);
+            current.Name = category.Name;
+            current.PhotoUrl = category.PhotoUrl;
+            _categoryDal.Update(current);
         }
     }
 }

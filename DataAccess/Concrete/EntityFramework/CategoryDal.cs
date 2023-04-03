@@ -16,7 +16,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (FurnihausDbContext context = new())
             {
-                var categories = context.Categories.Include(x => x.ChildCategory).Take(3).ToList();
+                var categories = context.Categories.Take(6).ToList();
 
                 return categories;
             }

@@ -1,9 +1,9 @@
-﻿using Core.DataAccess;
-using Entities.Concrete;
+﻿//using Core.DataAccess;
+//using Entities.Concrete;
 
-namespace DataAccess.Abstract
-{
-    public interface IChildCategoryDal : IEntityRepository<ChildCategory>
-    {
-    }
-}
+//namespace DataAccess.Abstract
+//{
+//    public interface IChildCategoryDal : IEntityRepository<ChildCategory>
+//    {
+//    }
+//}

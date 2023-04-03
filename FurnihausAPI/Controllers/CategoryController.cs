@@ -22,10 +22,10 @@ namespace FurnihausAPI.Controllers
             return _categoryManager.GetAllCategories();
         }
 
-        [HttpGet("getallchild")]
-        public List<Category> GetAllChild()
+        [HttpGet("getallFeatured")]
+        public List<Category> GetAllFeaturedCategories()
         {
-            return _categoryManager.GetAllChildCategories();
+            return _categoryManager.GetAllFeaturedCategories();
         }
 
         [HttpPost("add")]
@@ -35,17 +35,17 @@ namespace FurnihausAPI.Controllers
             return Ok("Category added.");
         }
 
-        [HttpPut("update")]
-        public IActionResult UpdateCategory(Category category)
+        [HttpPut("update/{id}")]
+        public IActionResult UpdateCategory(Category category, int id)
         {
-            _categoryManager.Update(category);  
+            _categoryManager.Update(category, id);  
             return Ok(new { status = 200, message = category });
         }
 
-        [HttpDelete("remove")]
-        public IActionResult DeleteCategory(Category category)
+        [HttpDelete("remove/{id}")]
+        public IActionResult  DeleteCategory(Category category, int id)
         {
-            _categoryManager.Remove(category);
+            _categoryManager.Remove(category, id);
             return Ok("Category deleted.");
         }
 
